@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stun-ism <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 19:44:18 by stun-ism          #+#    #+#             */
-/*   Updated: 2021/03/07 16:05:00 by stun-ism         ###   ########.fr       */
+/*   Created: 2021/03/06 20:29:35 by stun-ism          #+#    #+#             */
+/*   Updated: 2021/03/07 21:00:23 by stun-ism         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int		i;
-	int		j;
+	unsigned int		i;
+	unsigned int		j;
 
 	i = 0;
 	j = 0;
@@ -24,7 +24,7 @@ char	*ft_strcat(char *dest, char *src)
 	{
 		i++;
 	}
-	while (*(src + j) != '\0')
+	while (j < nb && *(src + j) != '\0')
 	{
 		*(dest + i) = *(src + j);
 		i++;
